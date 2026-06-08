@@ -39,6 +39,17 @@ const PROJECTS = [
       techs: ["Node.js", "MongoDB", "EJS", "PowerShell", "Express.js", "REST API", "Windows"],
       github: "https://github.com/Nullit13/bigbrother",
       demo: null
+    },
+    {
+      id: "finora",
+      title: "Finora",
+      category: "website",
+      catLabel: "Website",
+      desc: "An educational remote administration framework for cybersecurity learning, inspired by Orwell's 1984. A Node.js server hosts a web dashboard backed by MongoDB. The PowerShell client runs silently on Windows, persists via Scheduled Tasks, and polls every 3 seconds. For educational use only — on systems you own.",
+      image: "images/finora.png",
+      techs: ["Node.js", "MongoDB", "React", "Express.js", "JWT", "MERN stack"],
+      github: "https://github.com/Nullit13/finora",
+      demo: null
     }
   ];
   
