@@ -1,57 +1,114 @@
 const PROJECTS = [
-    {
-      id: "basher",
-      title: "Basher",
-      category: "cli",
-      catLabel: "CLI Tool",
-      desc: "A blazing-fast web directory scanner written in C++ that outpaces Gobuster. Leverages HTTP/2 connection pooling and pipelining for maximum throughput. Features auto-calibrating thread counts, smart rate limiting to avoid detection, extension brute-forcing, cookie authentication support, and a real-time progress bar.",
-      image: null,
-      visual: "terminal",
-      techs: ["C++", "libcurl", "HTTP/2", "Multi-threading", "Connection Pooling", "Linux", "Windows", "g++"],
-      github: "https://github.com/Nullit13/basher",
-      demo: "https://Nullit13.github.io/basher",
-      termLines: [
-        { type: "cmd", p: "nullit@kali", path: "~", cmd: "./basher --help" },
-        { type: "out", text: "⚡ Basher v1.0 — Blazing Fast Dir Scanner" },
-        { type: "out", text: "   Faster than Gobuster. Built in C++." },
-        { type: "blank" },
-        { type: "cmd", p: "nullit@kali", path: "~", cmd: "./basher -u https://target.com -w common.txt -t 100" },
-        { type: "out", text: "[*] Threads: 100 (auto-calibrated)" },
-        { type: "out", text: "[*] Protocol: HTTP/2 + Connection Pool" },
-        { type: "out", text: "[*] Wordlist: 10,000 words" },
-        { type: "blank" },
-        { type: "found", text: "[+] /admin          200 OK   (1.2KB)" },
-        { type: "found", text: "[+] /api            200 OK   (0.4KB)" },
-        { type: "found", text: "[+] /login          302 →    (0.1KB)" },
-        { type: "found", text: "[+] /dashboard      200 OK   (8.7KB)" },
-        { type: "out", text: "[~] Progress: 4891/10000  ████░░ 48.9%" },
-        { type: "cursor" }
-      ]
-    },
-    {
-      id: "bigbrother",
-      title: "Big Brother",
-      category: "framework",
-      catLabel: "Framework",
-      desc: "An educational remote administration framework for cybersecurity learning, inspired by Orwell's 1984. A Node.js server hosts a web dashboard backed by MongoDB. The PowerShell client runs silently on Windows, persists via Scheduled Tasks, and polls every 3 seconds. For educational use only — on systems you own.",
-      image: null,
-      visual: "eye",
-      techs: ["Node.js", "MongoDB", "EJS", "PowerShell", "Express.js", "REST API", "Windows"],
-      github: "https://github.com/Nullit13/bigbrother",
-      demo: null
-    },
-    {
-      id: "finora",
-      title: "Finora",
-      category: "website",
-      catLabel: "Website",
-      desc: "An educational remote administration framework for cybersecurity learning, inspired by Orwell's 1984. A Node.js server hosts a web dashboard backed by MongoDB. The PowerShell client runs silently on Windows, persists via Scheduled Tasks, and polls every 3 seconds. For educational use only — on systems you own.",
-      image: "images/finora.png",
-      techs: ["Node.js", "MongoDB", "React", "Express.js", "JWT", "MERN stack"],
-      github: "https://github.com/Nullit13/finora",
-      demo: null
-    }
-  ];
+  {
+    id: "finora",
+    title: "Finora",
+    category: "website",
+    catLabel: "Website",
+    desc: "A MERN stack personal finance tracker that helps users manage and track their earnings with secure JWT authentication, complete CRUD operations, and a responsive dashboard.",
+    image: "images/finora.png",
+    techs: ["Node.js", "MongoDB", "React", "Express.js", "JWT", "MERN stack"],
+    github: "https://github.com/Nullit13/finora",
+    demo: null
+  },
+  {
+    id: "iman-hub",
+    title: "Iman Hub",
+    category: "website",
+    catLabel: "Website",
+    desc: "An Islamic companion web app built with React, featuring Quran reading and recitation, Athkar, prayer times, Khatam tracking, and Islamic events in a clean, responsive interface.",
+    image: "images/imanhub.png",
+    techs: ["React", "React Router", "CSS3", "Local Storage", "Responsive Design"],
+    github: "https://github.com/Nullit13/iman-hub",
+    demo: "https://iman-hub.onrender.com/"
+  },
+  {
+    id: "bigbrother",
+    title: "Big Brother",
+    category: "framework",
+    catLabel: "Framework",
+    desc: "An educational remote administration framework for cybersecurity learning, inspired by Orwell's 1984. A Node.js server hosts a web dashboard backed by MongoDB, with a Windows client for controlled lab environments.",
+    image: null,
+    visual: "eye",
+    techs: ["Node.js", "MongoDB", "EJS", "PowerShell", "Express.js", "REST API", "Windows"],
+    github: "https://github.com/Nullit13/bigbrother",
+    demo: null
+  },
+  {
+    id: "handflow",
+    title: "HandFlow",
+    category: "app",
+    catLabel: "Python App",
+    desc: "A Python-based virtual mouse that lets you control your computer using hand gestures through a webcam. Uses real-time hand tracking with OpenCV and MediaPipe, with smooth cursor movement, gesture clicks, sensitivity controls, and deadzone filtering.",
+    image: null,
+    visual: "hand",
+    techs: ["Python", "OpenCV", "MediaPipe", "Computer Vision", "Hand Tracking"],
+    github: "https://github.com/Nullit13/handflow",
+    demo: null
+  },
+  {
+    id: "basher",
+    title: "Basher",
+    category: "cli",
+    catLabel: "CLI Tool",
+    desc: "A high-performance web directory scanner written in C++ using HTTP/2, connection pooling, multi-threading, rate limiting, extension scanning, cookie authentication, and a real-time progress bar.",
+    image: null,
+    visual: "terminal",
+    techs: ["C++", "libcurl", "HTTP/2", "Multi-threading", "Connection Pooling", "Linux", "Windows", "g++"],
+    github: "https://github.com/Nullit13/basher",
+    demo: "https://Nullit13.github.io/basher",
+    termLines: [
+      { type: "cmd", p: "nullit@kali", path: "~", cmd: "./basher --help" },
+      { type: "out", text: "⚡ Basher v1.0 — Blazing Fast Dir Scanner" },
+      { type: "out", text: "   Faster than Gobuster. Built in C++." },
+      { type: "blank" },
+      { type: "cmd", p: "nullit@kali", path: "~", cmd: "./basher -u https://target.com -w common.txt -t 100" },
+      { type: "out", text: "[*] Threads: 100 (auto-calibrated)" },
+      { type: "out", text: "[*] Protocol: HTTP/2 + Connection Pool" },
+      { type: "out", text: "[*] Wordlist: 10,000 words" },
+      { type: "blank" },
+      { type: "found", text: "[+] /admin          200 OK   (1.2KB)" },
+      { type: "found", text: "[+] /api            200 OK   (0.4KB)" },
+      { type: "found", text: "[+] /login          302 →    (0.1KB)" },
+      { type: "found", text: "[+] /dashboard      200 OK   (8.7KB)" },
+      { type: "out", text: "[~] Progress: 4891/10000  ████░░ 48.9%" },
+      { type: "cursor" }
+    ]
+  },
+  {
+    id: "winraider",
+    title: "WinRaider",
+    category: "cli",
+    catLabel: "CLI Tool",
+    desc: "A Python-based Windows security testing toolkit for authorized environments, featuring port scanning, local device discovery, vulnerability checks, SMB authentication testing, and report generation.",
+    image: null,
+    visual: "terminal",
+    techs: ["Python", "Impacket", "python-nmap", "Socket", "Multi-threading", "SMB", "WinRM", "SSH", "Windows", "Nmap"],
+    github: "https://github.com/Nullit13/winraider",
+    demo: "https://Nullit13.github.io/winraider",
+    termLines: [
+      { type: "cmd", p: "nullit@kali", path: "~", cmd: "./winraider --help" },
+      { type: "out", text: "⚡ WinRaider v2.0 — Windows Security Toolkit" },
+      { type: "out", text: "   Port scanning, discovery, and security testing." },
+      { type: "blank" },
+      { type: "cmd", p: "nullit@kali", path: "~", cmd: "./winraider --discover" },
+      { type: "out", text: "[+] Local IP: 192.168.3.1" },
+      { type: "out", text: "[+] Subnet: 192.168.3.0/24" },
+      { type: "out", text: "[+] Scanning for Windows devices..." },
+      { type: "blank" },
+      { type: "found", text: "[+] Found 1 Windows device(s):" },
+      { type: "found", text: "    - 192.168.3.5" },
+      { type: "blank" },
+      { type: "cmd", p: "nullit@kali", path: "~", cmd: "./winraider -t 192.168.3.5 --brute --threads 10" },
+      { type: "out", text: "[+] Loaded 121 usernames and 41 passwords." },
+      { type: "out", text: "[+] Total combinations: 4961" },
+      { type: "out", text: "[+] Brute-forcing port: 445" },
+      { type: "blank" },
+      { type: "found", text: "[+] SUCCESS! Valid credentials found: Username:password" },
+      { type: "out", text: "[~] Progress: 19/4961  ██░░░░ 0.38%" },
+      { type: "cursor" }
+    ]
+  }
+];
   
   let filtered = [...PROJECTS];
   let current = 0;
@@ -187,7 +244,7 @@ const PROJECTS = [
   });
   
   document.getElementById("copyEmailBtn").addEventListener("click", function() {
-    navigator.clipboard.writeText("adamprog13@gmail.com");
+    navigator.clipboard.writeText("adamprog213@gmail.com");
     this.textContent = "✓ Copied!";
     this.classList.add("copied");
     setTimeout(() => {
